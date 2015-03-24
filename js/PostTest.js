@@ -1,4 +1,4 @@
-var $ = require('jquery');
+// var $ = require('jquery');
 var Post = require('./Post');
 var React = require('react');
 

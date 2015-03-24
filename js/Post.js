@@ -1,4 +1,4 @@
-var $ = require('jquery');
+// var $ = require('jquery');
 var React = require('react');
 
 var Post = React.createClass({
