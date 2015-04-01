@@ -8,9 +8,11 @@ var PostEditor = React.createClass({
     // console.log('Post Heading: ', document.querySelector('#post-editor-form .post-body').innerHTML);
     // return;
 
-    var postData = {}
-    postData.title = document.querySelector('#post-editor-form .post-title').innerHTML;
-    postData.body = document.querySelector('#post-editor-form .post-body').innerHTML
+    var postData = {};
+    postData.post_content = {};
+    postData.post_content.title = document.querySelector('#post-editor-form .post-title').innerHTML;
+    postData.post_content.body = document.querySelector('#post-editor-form .post-body').innerHTML;
+    postData.user_id = 1;
     console.log(JSON.stringify(postData));
 
     var postRequest = new XMLHttpRequest();   // new HttpRequest instance 
@@ -24,7 +26,7 @@ var PostEditor = React.createClass({
         <h1 className="post-title editable">Heading...</h1>
         <div className="post-body editable">Post...</div>
 
-        <button type="submit" value="Post" />
+        <button type="submit">Post</button>
       </form>
     );
   }

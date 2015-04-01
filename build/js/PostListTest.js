@@ -4,10 +4,14 @@ var React = require('react');
 
 var Post = React.createClass({displayName: "Post",
   render: function() {
+    var postTitleMarkup = this.props.post.post_title;
+    var postBodyMarkup = this.props.post.post_body;
+
     return (
       React.createElement("div", {className: "post"}, 
-        React.createElement("h3", {className: "post-user"}, this.props.post.screen_name), 
-        React.createElement("p", {className: "post-content"}, this.props.post.post_content), 
+        React.createElement("h4", {className: "post-user"}, this.props.post.screen_name), 
+        React.createElement("h2", {className: "post-title", dangerouslySetInnerHTML: {__html: postTitleMarkup}}), 
+        React.createElement("p", {className: "post-body", dangerouslySetInnerHTML: {__html: postBodyMarkup}}), 
         React.createElement("span", {className: "post-postDate"}, this.props.post.created_at)
       )
     );
